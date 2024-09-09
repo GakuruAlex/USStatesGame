@@ -15,7 +15,7 @@ def main()-> None:
     counter = 0
     while game_is_on:
         no_states = len(u_s_states.data)
-        user_answer = screen.textinput(title=f"{counter}/{no_states}",prompt="Enter a state: ")
+        user_answer = screen.textinput(title=f"{counter}/{no_states} States Correct",prompt="What's another state's name: ")
         if u_s_states.check_state(user_answer):
             location = u_s_states.location_of_state(user_answer)
             name.write_name(location=location, user_guess=user_answer)
