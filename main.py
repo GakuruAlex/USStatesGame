@@ -8,19 +8,21 @@ def main()-> None:
     name = Names()
     game_is_on = True
 
-    screen.title("U.S. States Game")
+    screen.title("Name the  States Game")
     image = "blank_states_img.gif"
     screen.register_shape(image)
     turtle.shape(image)
     counter = 0
     while game_is_on:
-        no_states = len(u_s_states.data)
-        user_answer = screen.textinput(title=f"{counter}/{no_states} States Correct",prompt="What's another state's name: ")
+
+        user_answer = screen.textinput(title=f"{counter}/50 States Correct",prompt="What's another state's name: ")
         if u_s_states.check_state(user_answer):
             location = u_s_states.location_of_state(user_answer)
             name.write_name(location=location, user_guess=user_answer)
+            u_s_states.remove_state(user_guess= user_answer)
             counter += 1
-        if counter == no_states:
+        if counter == 50:
+            name.end_game()
             game_is_on = False
 
 

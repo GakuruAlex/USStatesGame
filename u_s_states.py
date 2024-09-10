@@ -36,3 +36,6 @@ class USStates:
             tuple: _location of state_
         """
         return self.data[user_guess.title()]
+
+    def remove_state(self, user_guess: str) -> None:
+        del self.data[user_guess.title()]
