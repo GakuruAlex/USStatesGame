@@ -39,3 +39,6 @@ class USStates:
 
     def remove_state(self, user_guess: str) -> None:
         del self.data[user_guess.title()]
+    def states_to_learn(self):
+        unnamed_states =pd.DataFrame({"States": list(self.data.keys())}, index= range(1, len(self.data) + 1))
+        unnamed_states.to_csv("./states_to_learn.csv")
