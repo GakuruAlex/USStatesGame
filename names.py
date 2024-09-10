@@ -18,7 +18,3 @@ class Names:
         self.turtle.goto(location)
         self.turtle.write(f"{user_guess.title()}")
 
-    def end_game(self):
-        self.turtle.color("green")
-        self.turtle.goto(-80,210)
-        self.turtle.write("Congratulations!You Named all the States!", font=FONT)

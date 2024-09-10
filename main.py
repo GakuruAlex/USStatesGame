@@ -15,7 +15,10 @@ def main()-> None:
     counter = 0
     while game_is_on:
 
-        user_answer = screen.textinput(title=f"{counter}/50 States Correct",prompt="What's another state's name: ")
+        user_answer = screen.textinput(title=f"{counter}/50 States Correct",prompt="What's another state's name: ").title()
+        if user_answer == "Exit":
+            u_s_states.states_to_learn()
+            break
         if u_s_states.check_state(user_answer):
             location = u_s_states.location_of_state(user_answer)
             name.write_name(location=location, user_guess=user_answer)
